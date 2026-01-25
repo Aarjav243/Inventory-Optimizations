@@ -140,35 +140,6 @@ def get_stores():
         }), 500
 
 
-@app.route('/', methods=['GET'])
-def index():
-    """API documentation"""
-    return jsonify({
-        'service': 'Inventory Optimization API',
-        'version': '1.0.0',
-        'endpoints': {
-            '/health': {
-                'method': 'GET',
-                'description': 'Health check endpoint'
-            },
-            '/predict': {
-                'method': 'POST',
-                'description': 'Get demand forecast and inventory recommendations',
-                'parameters': {
-                    'store_id': 'Store ID (default: 1)',
-                    'dept_id': 'Department ID (default: 1)',
-                    'forecast_periods': 'Number of periods to forecast (default: 12)',
-                    'lead_time_days': 'Lead time in days (default: 7)',
-                    'service_level': 'Target service level (default: 0.95)'
-                }
-            },
-            '/stores': {
-                'method': 'GET',
-                'description': 'Get list of available stores and departments'
-            }
-        }
-    })
-
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
