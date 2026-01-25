@@ -143,17 +143,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayResults(data) {
         // Update stats
         stats.avgDemand.textContent = formatCurrency(data.summary.avg_weekly_sales);
-        stats.safetyStock.textContent = formatNumber(data.safety_stock.safety_stock);
+        stats.safetyStock.textContent = formatNumber(data.safety_stock.safety_stock) + ' Units';
         stats.costSavings.textContent = formatCurrency(data.cost_savings.reduction);
         stats.savingsPercent.textContent = `${data.cost_savings.reduction_percentage.toFixed(1)}% Reduction`;
 
-        stats.reorderPoint.textContent = formatNumber(data.safety_stock.reorder_point);
-        stats.dailyDemand.textContent = formatNumber(data.safety_stock.average_daily_demand);
+        stats.reorderPoint.textContent = formatNumber(data.safety_stock.reorder_point) + ' Units';
+        stats.dailyDemand.textContent = formatNumber(data.safety_stock.average_daily_demand) + ' Units';
         stats.leadTimeDisplay.textContent = `${data.safety_stock.lead_time_days} Days`;
 
         stats.dataPoints.textContent = data.summary.data_points;
         stats.cov.textContent = `${data.summary.coefficient_of_variation.toFixed(1)}%`;
-        stats.stdDev.textContent = formatNumber(data.summary.std_weekly_sales);
+        stats.stdDev.textContent = formatNumber(data.summary.std_weekly_sales) + ' Units';
         stats.forecastDisplay.textContent = data.parameters.forecast_periods;
 
         // Update Chart
