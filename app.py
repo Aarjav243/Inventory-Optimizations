@@ -9,11 +9,17 @@ import pandas as pd
 import os
 from model import InventoryOptimizer
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='')
 CORS(app)
 
 # Configuration
 DATA_FILE = 'Train.csv'
+
+
+@app.route('/')
+def index():
+    """Serve the frontend"""
+    return app.send_static_file('index.html')
 
 
 @app.route('/health', methods=['GET'])
