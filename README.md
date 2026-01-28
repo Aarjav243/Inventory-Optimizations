@@ -31,19 +31,3 @@ While powerful, this model has some limitations:
 1. External Factors: It cannot predict changes caused by external events like sudden economic shifts, extreme weather, or competitor actions.
 2. Market Changes: If a business starts a major new marketing campaign or changes its pricing drastically, the historical data may no longer be a reliable guide.
 3. Data Requirement: The model needs a consistent history of past sales to make accurate predictions.
-
-## How to Deploy on Render
-
-Follow these steps to get the system running on Render:
-
-1. Create a Repository: Upload all the project files to your GitHub account.
-2. Connect to Render: Log in to your Render dashboard and click on New and then Web Service.
-3. Select Your Repository: Search for and select the repository you just created.
-4. Basic Settings:
-   - Name: Choose a name for your service.
-   - Environment: Select Python.
-   - Region: Choose the one closest to you.
-5. Build and Start Commands:
-   - Build Command: pip install -r requirements.txt
-   - Start Command: gunicorn app:app
-6. Deploy: Click Create Web Service. Render will now build and host your application. Once finished, you will receive a link to your live API.
